@@ -8,11 +8,17 @@
 
 .contacto{
     background-color: $fondo;
+    text-align: center;
+    color: grey;
+    h2{
+        color: blueviolet
+
+    }
 }
 
 .productos{
-    background-color: $fondo;
-    text-align: center;
+    @extend .contacto;
+    color:black;
 }
 
 
@@ -55,3 +61,24 @@ background-color:$fondo;
     padding: 1rem 14rem;
     margin:1rem 2rem 1rem 2rem;
 }
+
+/*MAPAS*/
+$mapa:(
+    Inicio: rgb(218, 68, 93),
+    productos: blue,
+    flores: white,
+    registrate: green,
+    contacto:purple,
+
+);
+
+@each $secciones, $colorinche in $mapa{
+    .boton--#{$secciones} { 
+        background-color: $colorinche;
+        text-align: center;
+
+    }
+}
+
+
+

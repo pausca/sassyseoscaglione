@@ -361,10 +361,30 @@ h1{
         margin:0%
     }
 
-    .imagen{
-        width:100px;
-        margin-left: 1rem;
-    }
+
+/*MIXINS*/
+$anchura: 100px;
+$margin:1rem;
+
+@mixin imagen ($anchura, $margin){
+
+    width:$anchura;
+    margin-left:$margin;
+}
+
+.imagen{
+@include imagen (100px, 1rem);
+}
+
+.imagen{
+    @include imagen (100px,1rem);
+}
+
+.imagen{
+    @include imagen (100px, 1rem);
+}
+
+
 
 span:hover {
     background-color:white;
@@ -419,9 +439,11 @@ footer{
     }
     /* GALERIA FLEX */
     .productosFlex {
-    display: flex;
+        display: flex;
     flex-flow:column;
-    background-color:rgb(235, 207, 171);
+    background-color:$fondo;
+
+    
 }
 }
 
